@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #video-background::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            z-index: 1; /* Sit on top of the video */
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the left */
+            flex-direction: column;
+            overflow: hidden; /* Prevent scrolling */
+            z-index: 2; /* Put content in the foreground */
+            color:white;
+            font-family: Montserrat;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2; /* Put content in the foreground */
+        }
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Put video in the background */
+        }
+        #video-background video {
+            width: 250%;
+            height: auto; /* Maintain aspect ratio */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center video */
+        }
+        t {
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            line-height: 30px;
+            width: 62vw;
+        }
+        @media (max-width: 600px) {
+            #video-background {
+                display: none; /* Hide video on small screens */
+            }
+            body {
+                background: black; /* Make background black on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="video-background">
+        <video preload="auto" autoplay="true" loop="loop" muted="muted">
+            <source src="public/videos/final.mp4" type="video/mp4">
+        </video>
+    </div>
+    <t>VEX V5 Team 1072A</t>
+    <p>Welcome to <strong>Team Forte</strong>, the robotics powerhouse from The Harker School. Composed of exceptional individuals, including Ayaan Grover, Arush Savla, Aarav Kumar, Avyay Ganesh, Advaith Rajesh, Tavish Yergera, and Arjun Murthy, we embark on a journey of innovation and collaboration, pushing the boundaries of robotics excellence. Join us as we explore the exciting world of robotics, where creativity meets precision, and challenges lead to triumphs.</p>
+</body>
+</html>
